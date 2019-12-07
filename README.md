@@ -32,3 +32,11 @@ ZDOTDIR=~/.local/zsh
   ``` shell
   setopt menu_complete
   ```
+
+- History configuration
+  ``` shell
+  HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
+  SAVEHIST=20000
+  HISTSIZE=50000
+  setopt share_history
+  ```
