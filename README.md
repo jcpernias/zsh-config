@@ -12,3 +12,11 @@ chsh -s /bin/zsh
 
 Also, move `.profile` to `.bash_profile` to prevent zsh from reading
 it.
+
+## Set the configuration directory ##
+
+Set `ZDOTDIR` in `~/.zshenv`:
+
+``` shell
+ZDOTDIR=~/.local/zsh
+```
