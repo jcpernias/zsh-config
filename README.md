@@ -20,3 +20,11 @@ Set `ZDOTDIR` in `~/.zshenv`:
 ``` shell
 ZDOTDIR=~/.local/zsh
 ```
+
+## Configuration file ##
+
+- Case insensitive globbing:
+
+``` shell
+setopt no_case_glob
+```
