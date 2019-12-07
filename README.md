@@ -24,7 +24,11 @@ ZDOTDIR=~/.local/zsh
 ## Configuration file ##
 
 - Case insensitive globbing:
+  ``` shell
+  setopt no_case_glob
+  ```
 
-``` shell
-setopt no_case_glob
-```
+- Cycle through completions:
+  ``` shell
+  setopt menu_complete
+  ```
