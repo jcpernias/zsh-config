@@ -91,3 +91,9 @@ ZDOTDIR=~/.local/zsh
   alias ls='ls -GFh --color'
   alias yt-mp3='youtube-dl -x --audio-format mp3'
   ```
+
+- Completion:
+
+  ``` shell
+  autoload -Uz compinit && compinit
+  ```

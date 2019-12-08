@@ -49,3 +49,6 @@ export TEXMFHOME=${HOME}/.local/share/texmf
 # aliases
 alias ls='ls -GFh --color'
 alias yt-mp3='youtube-dl -x --audio-format mp3'
+
+# completion
+autoload -Uz compinit && compinit
