@@ -2,22 +2,23 @@ SHELL := /bin/sh
 
 INSTALL := /usr/local/bin/ginstall
 
-installdir := ~
-zdotdir := $(installdir)/.local/zsh
-zshenv := $(installdir)/.zshenv
-zshrc := $(zdotdir)/.zshrc
+rootdir := $(HOME)
+zdotdir := $(rootdir)/.local/zsh
 
-all: $(zshenv) $(zshrc)
+all_deps := $(rootdir)/.zshenv $(zdotdir)/.zshrc
 
-$(zshenv):
+all: $(all_deps)
+
+.PHONY: $(rootdir)/.zshenv
+$(rootdir)/.zshenv:
 	$(file >$@,ZDOTDIR=$(zdotdir))
 
-$(zshrc): zshrc | $(zdotdir)
+$(zdotdir)/.zshrc: zshrc | $(zdotdir)
 	$(INSTALL) -m 0600 -T $< $@
 
 $(zdotdir):
 	$(INSTALL) -m 0700 -d $(zdotdir)
 
 clean:
-	-@rm $(zshenv)
+	-@rm $(rootdir)/.zshenv
 	-@rm -rf $(zdotdir)
