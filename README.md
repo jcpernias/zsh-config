@@ -47,3 +47,10 @@ ZDOTDIR=~/.local/zsh
   setopt hist_find_no_dups
   setopt hist_reduce_blanks
   ```
+
+- Correct typos and paths
+  ``` shell
+  setopt correct
+  setopt correct_all
+  SPROMPT="Correct %F{red}%R%f to %F{green}%r%f [nyae]?"
+  ```

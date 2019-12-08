@@ -15,3 +15,8 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 setopt hist_reduce_blanks
+
+# correction
+setopt correct
+setopt correct_all
+SPROMPT="Correct %F{red}%R%f to %F{green}%r%f [nyae]?"
