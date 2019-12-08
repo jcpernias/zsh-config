@@ -38,9 +38,14 @@ if [ -d ~/.local/bin ]; then
     path=(~/.local/bin $path)
 fi
 
-#export paths
+# export paths
 export PATH
 export MANPATH
 
-## my TeX stuff
+# my TeX stuff
 export TEXMFHOME=${HOME}/.local/share/texmf
+
+
+# aliases
+alias ls='ls -GFh --color'
+alias yt-mp3='youtube-dl -x --audio-format mp3'

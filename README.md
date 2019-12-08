@@ -84,3 +84,10 @@ ZDOTDIR=~/.local/zsh
   ``` shell
   export TEXMFHOME=${HOME}/.local/share/texmf
   ```
+
+- Aliases:
+
+  ``` shell
+  alias ls='ls -GFh --color'
+  alias yt-mp3='youtube-dl -x --audio-format mp3'
+  ```
