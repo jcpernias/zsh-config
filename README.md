@@ -78,3 +78,9 @@ ZDOTDIR=~/.local/zsh
   export PATH
   export MANPATH
   ```
+
+- Private TeX macros:
+
+  ``` shell
+  export TEXMFHOME=${HOME}/.local/share/texmf
+  ```

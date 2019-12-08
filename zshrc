@@ -41,3 +41,6 @@ fi
 #export paths
 export PATH
 export MANPATH
+
+## my TeX stuff
+export TEXMFHOME=${HOME}/.local/share/texmf
