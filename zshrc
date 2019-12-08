@@ -52,3 +52,6 @@ alias yt-mp3='youtube-dl -x --audio-format mp3'
 
 # completion
 autoload -Uz compinit && compinit
+
+# prompt
+PROMPT='%(?.%F{green}√.%F{red}X) %F{111}%1~%f %(!.%F{196}%B#%b.%F{111}%%)%f '
