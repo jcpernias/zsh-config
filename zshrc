@@ -34,8 +34,8 @@ path=(/usr/local/opt/coreutils/libexec/gnubin $path)
 manpath=(/usr/local/opt/coreutils/libexec/gnuman $path)
 
 # set PATH so it includes user's private bin if it exists
-if [ -d ~/.local/bin ]; then
-    path=(~/.local/bin $path)
+if [ -d ~/local/bin ]; then
+    path=(~/local/bin $path)
 fi
 
 # export paths
@@ -43,7 +43,7 @@ export PATH
 export MANPATH
 
 # my TeX stuff
-export TEXMFHOME=${HOME}/.local/share/texmf
+export TEXMFHOME=${HOME}/local/share/texmf
 
 
 # aliases
