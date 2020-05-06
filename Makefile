@@ -5,15 +5,17 @@ INSTALL := /usr/local/bin/ginstall
 rootdir := $(HOME)
 zdotdir := $(rootdir)/.local/zsh
 
-all_deps := $(rootdir)/.zshenv $(zdotdir)/.zshrc
+all_deps := $(rootdir)/.zshenv $(zdotdir)/.zprofile $(zdotdir)/.zshrc
 
 all: $(all_deps)
 
-.PHONY: $(rootdir)/.zshenv
 $(rootdir)/.zshenv:
-	$(file >$@,ZDOTDIR=$(zdotdir))
+	echo "# Set zsh config dir\nZDOTDIR=$(zdotdir)" >> $@
 
 $(zdotdir)/.zshrc: zshrc | $(zdotdir)
+	$(INSTALL) -m 0600 -T $< $@
+
+$(zdotdir)/.zprofile: zprofile | $(zdotdir)
 	$(INSTALL) -m 0600 -T $< $@
 
 $(zdotdir):
