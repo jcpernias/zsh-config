@@ -57,54 +57,46 @@ ZDOTDIR=~/.local/zsh
 
 ### zshrc
 
-- Case insensitive globbing:
+- Set path to oh-my-zsh installation 
   ``` shell
-  setopt no_case_glob
+  export ZSH=$ZDOTDIR/oh-my-zsh
   ```
 
-- Cycle through completions:
+- Custom folder for oh-my-zsh:
   ``` shell
-  setopt menu_complete
+  ZSH_CUSTOM=$ZDOTDIR/custom
   ```
 
-- History configuration:
+- Set theme:
   ``` shell
-  HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
-  SAVEHIST=20000
-  HISTSIZE=50000
-  setopt share_history
-  ```
-  Clean out duplicates and blanks:
-  ``` shell
-  setopt hist_expire_dups_first
-  setopt hist_ignore_dups
-  setopt hist_find_no_dups
-  setopt hist_reduce_blanks
+  ZSH_THEME="robbyrussell"
   ```
 
-- Correct typos and paths:
+- Plugins:
+  ``` shell
+  plugins=(
+  git
+  osx
+  sudo
+  z
+  web-search
+  zsh-autosuggestions 
+  zsh-syntax-highlighting)
+  ```
+
+### custom.zsh 
+
+- Correct:
+
   ``` shell
   setopt correct
   setopt correct_all
   SPROMPT="Correct %F{red}%R%f to %F{green}%r%f [nyae]?"
   ```
 
-
 - Aliases:
 
   ``` shell
   alias ls='ls -GFh --color'
   alias yt-mp3='youtube-dl -x --audio-format mp3'
-  ```
-
-- Completion:
-
-  ``` shell
-  autoload -Uz compinit && compinit
-  ```
-
-- Custom prompt
-
-  ``` shell
-  PROMPT='%(?.%F{green}√.%F{red}X) %F{111}%1~%f %(!.%F{196}%B#%b.%F{111}%%)%f '
   ```
