@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.local/zsh/oh-my-zsh
+export ZSH=$ZDOTDIR/oh-my-zsh
 
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$ZDOTDIR/custom
