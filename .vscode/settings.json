@@ -1,0 +1,17 @@
+{
+  "spellright.language": [
+    "es",
+    "en"
+  ],
+  "spellright.documentTypes": [
+    "markdown",
+    "latex",
+    "plaintext"
+  ],
+  "files.associations": 
+    { 
+      "zprofile": "shellscript",
+      "zsh*": "shellscript",
+      "*.el": "lisp"
+    }
+}
