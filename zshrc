@@ -71,6 +71,7 @@ plugins=(
   osx
   sudo
   z
+  web-search
   zsh-autosuggestions 
   zsh-syntax-highlighting)
 
