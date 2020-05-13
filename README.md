@@ -13,15 +13,49 @@ chsh -s /bin/zsh
 Also, move `.profile` to `.bash_profile` to prevent zsh from reading
 it.
 
-## Set the configuration directory ##
+## Configuration files ##
 
-Set `ZDOTDIR` in `~/.zshenv`:
+### zshenv
+
+Set the configuration directory `ZDOTDIR` in `~/.zshenv`:
 
 ``` shell
 ZDOTDIR=~/.local/zsh
 ```
 
-## Configuration file ##
+### zprofile 
+
+- Paths:
+  ``` shell
+  # paths
+
+  # avoid duplicates
+  typeset -U path
+  typeset -U manpath
+
+  # path to coreutils commands with their normal names
+  path=(/usr/local/opt/coreutils/libexec/gnubin $path)
+
+  # path to coreutils man pages with normal names if you add
+  manpath=(/usr/local/opt/coreutils/libexec/gnuman $path)
+
+  # set PATH so it includes user's private bin if it exists
+  if [ -d ~/.local/bin ]; then
+      path=(~/.local/bin $path)
+  fi
+
+  #export paths
+  export PATH
+  export MANPATH
+  ```
+
+- Private TeX macros:
+
+  ``` shell
+  export TEXMFHOME=${HOME}/.local/share/texmf
+  ```
+
+### zshrc
 
 - Case insensitive globbing:
   ``` shell
@@ -55,35 +89,6 @@ ZDOTDIR=~/.local/zsh
   SPROMPT="Correct %F{red}%R%f to %F{green}%r%f [nyae]?"
   ```
 
-- Paths:
-  ``` shell
-  # paths
-
-  # avoid duplicates
-  typeset -U path
-  typeset -U manpath
-
-  # path to coreutils commands with their normal names
-  path=(/usr/local/opt/coreutils/libexec/gnubin $path)
-
-  # path to coreutils man pages with normal names if you add
-  manpath=(/usr/local/opt/coreutils/libexec/gnuman $path)
-
-  # set PATH so it includes user's private bin if it exists
-  if [ -d ~/.local/bin ]; then
-      path=(~/.local/bin $path)
-  fi
-
-  #export paths
-  export PATH
-  export MANPATH
-  ```
-
-- Private TeX macros:
-
-  ``` shell
-  export TEXMFHOME=${HOME}/.local/share/texmf
-  ```
 
 - Aliases:
 
