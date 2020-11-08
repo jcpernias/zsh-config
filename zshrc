@@ -1,3 +1,4 @@
+# -*- mode: sh; -*-
 # Path to your oh-my-zsh installation.
 export ZSH=$ZDOTDIR/oh-my-zsh
 
@@ -72,7 +73,7 @@ plugins=(
   sudo
   z
   web-search
-  zsh-autosuggestions 
+  zsh-autosuggestions
   zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
