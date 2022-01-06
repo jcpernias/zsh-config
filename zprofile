@@ -10,6 +10,9 @@ path=(/usr/local/sbin $path)
 # path to coreutils commands with their normal names
 path=(/usr/local/opt/coreutils/libexec/gnubin $path)
 
+# path for elpy
+path=(~/.local/bin $path)
+
 # set PATH so it includes user's private bin if it exists
 if [ -d ~/local/bin ]; then
     path=(~/local/bin $path)
