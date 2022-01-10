@@ -4,11 +4,14 @@
 # avoid duplicates
 typeset -U path
 
-# path to homebrew sbin
+# Homebrew: sbin
 path=(/usr/local/sbin $path)
 
-# path to coreutils commands with their normal names
+# Homebrew: coreutils commands with their normal names
 path=(/usr/local/opt/coreutils/libexec/gnubin $path)
+
+# Homebrew: texinfo and grep
+path=(/usr/local/opt/texinfo/bin /usr/local/opt/grep/libexec/gnubin $path)
 
 # path for elpy
 path=(~/.local/bin $path)
