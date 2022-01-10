@@ -10,6 +10,9 @@ path=(/usr/local/sbin $path)
 # Homebrew: coreutils commands with their normal names
 path=(/usr/local/opt/coreutils/libexec/gnubin $path)
 
+# Homebrew: findutils commands with their normal names
+path=(/usr/local/opt/findutils/libexec/gnubin $path)
+
 # Homebrew: texinfo and grep
 path=(/usr/local/opt/texinfo/bin /usr/local/opt/grep/libexec/gnubin $path)
 
