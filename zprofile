@@ -1,20 +1,24 @@
 # -*- sh -*-
+
+# Init homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # paths
 
 # avoid duplicates
 typeset -U path
 
 # Homebrew: sbin
-path=(/usr/local/sbin $path)
+path=($(brew --prefix)/sbin $path)
 
 # Homebrew: coreutils commands with their normal names
-path=(/usr/local/opt/coreutils/libexec/gnubin $path)
+path=($(brew --prefix)/opt/coreutils/libexec/gnubin $path)
 
 # Homebrew: findutils commands with their normal names
-path=(/usr/local/opt/findutils/libexec/gnubin $path)
+path=($(brew --prefix)/opt/findutils/libexec/gnubin $path)
 
 # Homebrew: texinfo and grep
-path=(/usr/local/opt/texinfo/bin /usr/local/opt/grep/libexec/gnubin $path)
+path=($(brew --prefix)/opt/texinfo/bin $brew_prefix/opt/grep/libexec/gnubin $path)
 
 # path for elpy
 path=(~/.local/bin $path)

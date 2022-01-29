@@ -1,6 +1,12 @@
 SHELL := /bin/sh
 
-INSTALL := /usr/local/bin/ginstall
+INSTALL := /usr/bin/install
+GIT := /usr/bin/git
+WGET := /usr/bin/wget
+ECHO := /bin/echo
+RM := /bin/rm
+
+-include local.mk
 
 rootdir := $(HOME)
 zdotdir := $(rootdir)/.local/zsh
@@ -13,23 +19,25 @@ all_deps := $(rootdir)/.zshenv $(zdotdir)/.zprofile $(zdotdir)/.zshrc \
 	$(pluginsdir)/zsh-autosuggestions \
 	$(pluginsdir)/zsh-syntax-highlighting
 
+ohmyzsh_url := https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+
 all: $(all_deps)
 
 ./install.sh:
-	wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+	$(WGET) $(ohmyzsh_url)
 
 $(ohmyzshdir): ./install.sh | $(zdotdir)
-	ZSH=$@ sh $< --unattended --keep-zshrc
-	rm $(rootdir)/.zshrc 
+	$(shell ZSH=$@ $< --unattended --keep-zshrc)
+	$(RM) $(rootdir)/.zshrc
 
 $(pluginsdir)/zsh-autosuggestions: | $(pluginsdir)
-	git clone https://github.com/zsh-users/zsh-autosuggestions.git $@
+	$(GIT) clone https://github.com/zsh-users/zsh-autosuggestions.git $@
 
 $(pluginsdir)/zsh-syntax-highlighting: | $(pluginsdir)
-	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $@
+	$(GIT) clone https://github.com/zsh-users/zsh-syntax-highlighting.git $@
 
 $(rootdir)/.zshenv:
-	echo "# Set zsh config dir\nZDOTDIR=$(zdotdir)" >> $@
+	$(ECHO) "# Set zsh config dir\nZDOTDIR=$(zdotdir)" >> $@
 
 $(zdotdir)/.zshrc: zshrc | $(zdotdir)
 	$(INSTALL) -m 0600 -T $< $@
@@ -50,5 +58,5 @@ $(pluginsdir):
 	$(INSTALL) -m 0700 -d $@
 
 clean:
-	-@rm $(rootdir)/.zshenv
-	-@rm -rf $(zdotdir)
+	-@$(RM) $(rootdir)/.zshenv
+	-@$(RM) -rf $(zdotdir)
