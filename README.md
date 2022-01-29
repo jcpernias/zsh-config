@@ -23,7 +23,7 @@ Set the configuration directory `ZDOTDIR` in `~/.zshenv`:
 ZDOTDIR=~/.local/zsh
 ```
 
-### zprofile 
+### zprofile
 
 - Paths:
   ``` shell
@@ -57,7 +57,7 @@ ZDOTDIR=~/.local/zsh
 
 ### zshrc
 
-- Set path to oh-my-zsh installation 
+- Set path to oh-my-zsh installation
   ``` shell
   export ZSH=$ZDOTDIR/oh-my-zsh
   ```
@@ -76,15 +76,15 @@ ZDOTDIR=~/.local/zsh
   ``` shell
   plugins=(
   git
-  osx
+  macos
   sudo
   z
   web-search
-  zsh-autosuggestions 
+  zsh-autosuggestions
   zsh-syntax-highlighting)
   ```
 
-### custom.zsh 
+### custom.zsh
 
 - Correct:
 
