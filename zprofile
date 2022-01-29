@@ -1,7 +1,12 @@
 # -*- sh -*-
 
+brewbin=/usr/local/bin/brew
+if [[ $(arch) == 'arm64' ]]; then
+  brewbin=/opt/homebrew/bin/brew
+fi
+
 # Init homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$($brewbin shellenv)"
 
 # paths
 
@@ -9,16 +14,16 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 typeset -U path
 
 # Homebrew: sbin
-path=($(brew --prefix)/sbin $path)
+path=($HOMEBREW_PREFIX/sbin $path)
 
 # Homebrew: coreutils commands with their normal names
-path=($(brew --prefix)/opt/coreutils/libexec/gnubin $path)
+path=($HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin $path)
 
 # Homebrew: findutils commands with their normal names
-path=($(brew --prefix)/opt/findutils/libexec/gnubin $path)
+path=($HOMEBREW_PREFIX/opt/findutils/libexec/gnubin $path)
 
 # Homebrew: texinfo and grep
-path=($(brew --prefix)/opt/texinfo/bin $brew_prefix/opt/grep/libexec/gnubin $path)
+path=($HOMEBREW_PREFIX/opt/texinfo/bin $HOMEBREW_PREFIX/opt/grep/libexec/gnubin $path)
 
 # path for elpy
 path=(~/.local/bin $path)
