@@ -16,6 +16,9 @@ typeset -U path
 # Homebrew: sbin
 path=($HOMEBREW_PREFIX/sbin $path)
 
+# Homebrew: sed with their normal name
+path=($HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin $path)
+
 # Homebrew: coreutils commands with their normal names
 path=($HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin $path)
 
