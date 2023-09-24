@@ -44,3 +44,6 @@ export PATH
 
 # my TeX stuff
 export TEXMFHOME=${HOME}/local/share/texmf
+
+# language
+export LANG="es_ES.UTF-8"
