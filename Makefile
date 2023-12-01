@@ -27,7 +27,7 @@ all: $(all_deps)
 	$(WGET) $(ohmyzsh_url)
 
 $(ohmyzshdir): ./install.sh | $(zdotdir)
-	$(shell ZSH=$@ $< --unattended --keep-zshrc)
+	ZSH=$@ source $< --unattended --keep-zshrc
 	$(RM) $(rootdir)/.zshrc
 
 $(pluginsdir)/zsh-autosuggestions: | $(pluginsdir)
