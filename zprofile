@@ -34,6 +34,9 @@ path=($HOMEBREW_PREFIX/opt/gcc/bin $path)
 # path for elpy
 path=(~/.local/bin $path)
 
+# path for gretl
+path=(/Applications/Gretl.app/Contents/Resources/bin $path)
+
 # set PATH so it includes user's private bin if it exists
 if [ -d ~/local/bin ]; then
     path=(~/local/bin $path)
